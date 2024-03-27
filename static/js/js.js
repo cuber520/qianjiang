@@ -112,9 +112,13 @@ $(".header .nav-list .nav-item").on("mouseenter", function() {
     });
 
 footHt = parseFloat($('.footer').outerHeight());
+
 $('.main-box').css({ 'margin-bottom': footHt });
+// $('.main-box').css({ 'margin-bottom': winHt });
+// console.log(footHt);
 
 var itemHeightOffTop = $('.content-v4').offset().top;
+
 console.log(itemHeightOffTop);
 
 
@@ -125,17 +129,19 @@ $(window).scroll(function() {
     if (gund1 < itemHeightOffTop) {
 
         console.log(11);
+        // $('.slide-fixed').css('z-index', '-1')
+        homeSwiper.params.mousewheel.releaseOnEdges = true;
 
-        // homeSwiper.params.mousewheel.releaseOnEdges = true;
-
+    } else {
+        homeSwiper.params.mousewheel.releaseOnEdges = false;
     }
     // else if (gund1 < 10) {
     //     homeSwiper.params.mousewheel.releaseOnEdges = false;
 
     // }
 
-    if (gund1 > 5) {
-        console.log(22);
+    if (gund1 > 50) {
+        // console.log(22);
         homeSwiper.mousewheel.disable(); //禁止鼠标滑轮控制
     } else {
         homeSwiper.mousewheel.enable(); //开启鼠标滑轮控制

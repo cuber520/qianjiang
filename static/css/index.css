@@ -182,6 +182,38 @@
   animation: goBottom 5.4s linear infinite;
 }
 
+.home-banner .swiper-slide3 {
+  background: transparent;
+}
+
+.slide-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.slide-fixed .hmweb-paging {
+  position: absolute;
+  top: 33.2%;
+  left: 50%;
+  width: 84%;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  transition: .4s;
+  transform: translate(-50%, 20px);
+  -webkit-transition: .4s;
+  -webkit-transform: translate(-50%, 20px);
+}
+
+.slide-fixed .hmweb-paging .tit {
+  font-size: 3.6em;
+  line-height: 1.13;
+}
+
 /**** video ***/
 .video-box {
   position: relative;
@@ -333,8 +365,20 @@
 }
 
 .header .search {
-  width: 1em;
-  height: 1em;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.header .search .icon {
+  width: 100%;
+  height: 100%;
+}
+
+.header .search img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .header .nav-item {
@@ -478,7 +522,11 @@
   font-size: 3.6em;
   line-height: 1;
   font-weight: normal;
-  padding-bottom: .8em;
+  padding-bottom: .4em;
+}
+
+.verona .verona-sec2 .verona-sec2-text-img .verona-sec2-texts {
+  height: auto;
 }
 
 .verona .verona-sec2 .verona-sec2-text-img .verona-sec2-texts .verona-sec2-text {
@@ -539,4 +587,51 @@
   50% {
     transform: translateY(10px);
   }
+}
+
+.verona-sec2-line .icon-tit {
+  position: absolute;
+  top: 47%;
+  left: 10%;
+  transform: translateY(-42%);
+}
+
+.verona-sec2-line:first-child .icon-tit {
+  left: 21%;
+}
+
+.verona-sec2-line:nth-child(4) .icon-tit {
+  left: 66%;
+  transform: translateY(-42%) rotate(180deg);
+}
+
+.foot-topbox-tool .btn {
+  width: 10rem;
+  height: 2.5em;
+  background-color: #0052b7;
+  border-radius: 25px;
+  transition: .3s;
+  padding: 0;
+  margin-bottom: 3.5em;
+}
+
+.foot-topbox-tool .btn a {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.foot-topbox-tool .btn svg {
+  display: none;
+}
+
+.foot-topbox-tool .btn:hover {
+  background-image: linear-gradient(0deg, #0170b2 0%, #07bfb9 100%), linear-gradient(#83b3fa, #83b3fa);
+  background-blend-mode: normal, normal;
+  transition: .3s;
 }

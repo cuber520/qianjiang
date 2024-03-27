@@ -151,7 +151,7 @@ $(function() {
         var timeLineSec1_2 = new TimelineMax()
             .add(TweenMax.to([".verona-sec1-bg"], 5, { opacity: 1 }))
 
-        var sceneSec1_2 = new ScrollMagic.Scene({ triggerElement: "#triggerSec1_2", triggerHook: 1, duration: "100%" })
+        var sceneSec1_2 = new ScrollMagic.Scene({ triggerElement: "#triggerSec1_2", triggerHook: 1, duration: "80%" })
             .setTween(timeLineSec1_2)
             .addTo(controller);
     }
@@ -163,47 +163,68 @@ $(function() {
         .add(TweenMax.to(["#veronaSec2Circle"], 11, { rotation: -200, ease: Linear.easeNone }), "t0")
         .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-circle-box"], 11, { rotation: 200, ease: Linear.easeNone }), "t0")
 
-    .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(1) .sec2-svg"], 1, { scale: 0, opacity: 0 }), "t0+=1")
-        .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(1) .verona-sec2-circle-point"], 1, { width: '8.4%', height: '8.4%' }), "t0+=1")
+    // .add(TweenMax.to([".slide-fixed"], 11, { 'display': 'none' }), "t0+=7")
+
+    .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(1) .verona-sec2-circle-point"], 1, { width: '8.4%', height: '8.4%' }), "t0+=1")
+        .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(1) .sec2-svg"], 1, { scale: 0, opacity: 0 }), "t0+=1")
+        .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(1) .icon-tit"], 1, { scale: 0, opacity: 0 }), "t0+=1")
 
     .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(2) .sec2-svg"], 2, { scale: 1, opacity: 1 }), "t0+=1")
         .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(2) .verona-sec2-circle-point"], 2, { width: '100%', height: '100%' }), "t0+=1")
-        .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(1)"], 2, { y: '-110%', ease: Linear.easeNone }), "t0+=1")
-        .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(2)"], 2, { y: '0%', ease: Linear.easeNone }), "t0+=1")
+        .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(2) .icon-tit"], 2, { scale: 0, opacity: 0 }), "t0+=1")
+
+    .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(1)"], 2, { y: '-110%', ease: Linear.easeNone }), "t0+=1")
+        .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(1) .icon-tit"], 1, { scale: 1, opacity: 1, left: '10%' }), "t0+=1")
+
+    .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(2)"], 2, { y: '0%', ease: Linear.easeNone }), "t0+=1")
         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(2)"], 2, { y: '0%', opacity: 1, ease: Linear.easeNone }), "t0+=1")
         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(2) .verona-common-overlay"], 2, { opacity: 0 }), "t0+=1")
-        .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(3)"], 2, { y: '100%', opacity: 1, ease: Linear.easeNone }), "t0+=1")
+
+    .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(3)"], 2, { y: '100%', opacity: 1, ease: Linear.easeNone }), "t0+=1")
         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(4)"], 1, { y: '200%', opacity: 1, ease: Linear.easeNone }), "t0+=1")
         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(5)"], 1, { y: '300%', opacity: 1, ease: Linear.easeNone }), "t0+=1")
         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(6)"], 1, { y: '400%', opacity: 1, ease: Linear.easeNone }), "t0+=1")
         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(1)"], 3, { opacity: 0 }), "t0+=1")
-        .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(2) .sec2-svg"], 1, { scale: 0, opacity: 0 }), "t0+=4")
-        .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(2) .verona-sec2-circle-point"], 1, { width: '8.4%', height: '8.4%' }), "t0+=4")
 
-    .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(3) .sec2-svg"], 2, { scale: 1, opacity: 1 }), "t0+=4")
+
+    .add(TweenMax.to([".slide-fixed"], 1, { 'display': 'none' }), "t0+=1") //
+
+
+    .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(2) .sec2-svg"], 1, { scale: 0, opacity: 0 }), "t0+=4")
+        .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(2) .verona-sec2-circle-point"], 1, { width: '8.4%', height: '8.4%' }), "t0+=4")
+        .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(2) .icon-tit"], 2, { scale: 1, opacity: 1 }), "t0+=4")
+
+    .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(3) .icon-tit"], 2, { scale: 0, opacity: 0 }), "t0+=4")
+        .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(3) .sec2-svg"], 2, { scale: 1, opacity: 1 }), "t0+=4")
         .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(3) .verona-sec2-circle-point"], 2, { width: '100%', height: '100%' }), "t0+=4")
         .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(2)"], 2, { y: '-110%', ease: Linear.easeNone }), "t0+=4")
         .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(3)"], 2, { y: '0%', ease: Linear.easeNone }), "t0+=4")
         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(3)"], 2, { y: '0%', opacity: 1, ease: Linear.easeNone }), "t0+=4")
         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(3) .verona-common-overlay"], 2, { opacity: 0 }), "t0+=4")
         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(4)"], 2, { y: '100%', opacity: 1, ease: Linear.easeNone }), "t0+=4")
-        .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(5)"], 1, { y: '200%', opacity: 1, ease: Linear.easeNone }), "t0+=4")
-        .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(6)"], 1, { y: '300%', opacity: 1, ease: Linear.easeNone }), "t0+=4")
+        // .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(5)"], 1, { y: '200%', opacity: 1, ease: Linear.easeNone }), "t0+=4")
+        // .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(6)"], 1, { y: '300%', opacity: 1, ease: Linear.easeNone }), "t0+=4")
         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(2)"], 3, { opacity: 0 }), "t0+=4")
         .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(3) .sec2-svg"], 1, { scale: 0, opacity: 0 }), "t0+=7")
-        .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(3) .verona-sec2-circle-point"], 1, { width: '8.4%', height: '8.4%' }), "t0+=7")
+
+    .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(3) .verona-sec2-circle-point"], 1, { width: '8.4%', height: '8.4%' }), "t0+=7")
+        .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(3) .icon-tit"], 2, { scale: 1, opacity: 1 }), "t0+=7")
+        // .add(TweenMax.to([".slide-fixed"], 11, { 'display': 'none' }), "t0+=7")
+        // .add(TweenMax.to([".slide-fixed"], 11, { opacity: 0 }), "t0+=7")
 
     .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(4) .sec2-svg"], 2, { scale: 1, opacity: 1 }), "t0+=7")
+        .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(4) .icon-tit"], 2, { scale: 0, opacity: 0 }), "t0+=7")
         .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(4) .verona-sec2-circle-point"], 2, { width: '100%', height: '100%' }), "t0+=7")
         .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(3)"], 2, { y: '-110%', ease: Linear.easeNone }), "t0+=7")
         .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(4)"], 2, { y: '0%', ease: Linear.easeNone }), "t0+=7")
         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(4)"], 2, { y: '0%', opacity: 1, ease: Linear.easeNone }), "t0+=7")
         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(4) .verona-common-overlay"], 2, { opacity: 0 }), "t0+=7")
-        .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(5)"], 2, { y: '100%', opacity: 1, ease: Linear.easeNone }), "t0+=7")
-        .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(6)"], 1, { y: '200%', opacity: 1, ease: Linear.easeNone }), "t0+=7")
+        // .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(5)"], 2, { y: '100%', opacity: 1, ease: Linear.easeNone }), "t0+=7")
+        // .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(6)"], 1, { y: '200%', opacity: 1, ease: Linear.easeNone }), "t0+=7")
         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(3)"], 3, { opacity: 0 }), "t0+=7")
         .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(4) .sec2-svg"], 1, { scale: 0, opacity: 0 }), "t0+=10")
         .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(4) .verona-sec2-circle-point"], 1, { width: '8.4%', height: '8.4%' }), "t0+=10")
+        .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(4) .icon-tit"], 2, { scale: 1, opacity: 1 }), "t0+=10")
 
     // .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(5) .sec2-svg"], 2, { scale: 1, opacity: 1 }), "t0+=10")
     //     .add(TweenMax.to(["#veronaSec2Circle .verona-sec2-line:nth-child(5) .verona-sec2-circle-point"], 2, { width: '100%', height: '100%' }), "t0+=10")
@@ -224,64 +245,64 @@ $(function() {
     //     .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(6) .verona-common-overlay"], 2, { opacity: 0 }), "t0+=13")
     //     .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(5)"], 3, { opacity: 0 }), "t0+=13")
 
-    var sceneSec2 = new ScrollMagic.Scene({ triggerElement: "#triggerSec2", duration: "400%", triggerHook: 0 })
+    var sceneSec2 = new ScrollMagic.Scene({ triggerElement: "#triggerSec2", duration: "600%", triggerHook: 0 })
         .setPin('.verona-sec2-container')
         .setTween(timeLineSec2)
         // .addIndicators({ name: "sec2" })
         .addTo(controller);
 
-    if (isMob) {
-        timeLineSec2 = null;
-        sceneSec2.destroy(true);
+    // if (isMob) {
+    //     timeLineSec2 = null;
+    //     sceneSec2.destroy(true);
 
-        var timeLineSec2M = new TimelineMax()
-            .addLabel("t0")
-            .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(1)"], 2, { y: '-110%', ease: Linear.easeNone }), "t0")
-            .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(2)"], 2, { y: '0%', ease: Linear.easeNone }), "t0")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(2)"], 2, { y: '0%', opacity: 1, ease: Linear.easeNone }), "t0")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(2) .verona-common-overlay"], 2, { opacity: 0 }), "t0")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(3)"], 2, { y: '100%', opacity: 1, ease: Linear.easeNone }), "t0")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(4)"], 1, { y: '200%', opacity: 1, ease: Linear.easeNone }), "t0")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(5)"], 1, { y: '300%', opacity: 1, ease: Linear.easeNone }), "t0")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(6)"], 1, { y: '400%', opacity: 1, ease: Linear.easeNone }), "t0")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(1)"], 3, { opacity: 0 }), "t0")
+    //     var timeLineSec2M = new TimelineMax()
+    //         .addLabel("t0")
+    //         .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(1)"], 2, { y: '-110%', ease: Linear.easeNone }), "t0")
+    //         .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(2)"], 2, { y: '0%', ease: Linear.easeNone }), "t0")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(2)"], 2, { y: '0%', opacity: 1, ease: Linear.easeNone }), "t0")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(2) .verona-common-overlay"], 2, { opacity: 0 }), "t0")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(3)"], 2, { y: '100%', opacity: 1, ease: Linear.easeNone }), "t0")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(4)"], 1, { y: '200%', opacity: 1, ease: Linear.easeNone }), "t0")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(5)"], 1, { y: '300%', opacity: 1, ease: Linear.easeNone }), "t0")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(6)"], 1, { y: '400%', opacity: 1, ease: Linear.easeNone }), "t0")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(1)"], 3, { opacity: 0 }), "t0")
 
-        .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(2)"], 2, { y: '-110%', ease: Linear.easeNone }), "t0+=3")
-            .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(3)"], 2, { y: '0%', ease: Linear.easeNone }), "t0+=3")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(3)"], 2, { y: '0%', opacity: 1, ease: Linear.easeNone }), "t0+=3")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(3) .verona-common-overlay"], 2, { opacity: 0 }), "t0+=3")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(4)"], 2, { y: '100%', opacity: 1, ease: Linear.easeNone }), "t0+=3")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(5)"], 1, { y: '200%', opacity: 1, ease: Linear.easeNone }), "t0+=3")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(6)"], 1, { y: '300%', opacity: 1, ease: Linear.easeNone }), "t0+=3")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(2)"], 3, { opacity: 0 }), "t0+=3")
+    //     .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(2)"], 2, { y: '-110%', ease: Linear.easeNone }), "t0+=3")
+    //         .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(3)"], 2, { y: '0%', ease: Linear.easeNone }), "t0+=3")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(3)"], 2, { y: '0%', opacity: 1, ease: Linear.easeNone }), "t0+=3")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(3) .verona-common-overlay"], 2, { opacity: 0 }), "t0+=3")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(4)"], 2, { y: '100%', opacity: 1, ease: Linear.easeNone }), "t0+=3")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(5)"], 1, { y: '200%', opacity: 1, ease: Linear.easeNone }), "t0+=3")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(6)"], 1, { y: '300%', opacity: 1, ease: Linear.easeNone }), "t0+=3")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(2)"], 3, { opacity: 0 }), "t0+=3")
 
-        .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(3)"], 2, { y: '-110%', ease: Linear.easeNone }), "t0+=6")
-            .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(4)"], 2, { y: '0%', ease: Linear.easeNone }), "t0+=6")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(4)"], 2, { y: '0%', opacity: 1, ease: Linear.easeNone }), "t0+=6")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(4) .verona-common-overlay"], 2, { opacity: 0 }), "t0+=6")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(5)"], 2, { y: '100%', opacity: 1, ease: Linear.easeNone }), "t0+=6")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(6)"], 1, { y: '200%', opacity: 1, ease: Linear.easeNone }), "t0+=6")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(3)"], 3, { opacity: 0 }), "t0+=6")
+    //     .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(3)"], 2, { y: '-110%', ease: Linear.easeNone }), "t0+=6")
+    //         .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(4)"], 2, { y: '0%', ease: Linear.easeNone }), "t0+=6")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(4)"], 2, { y: '0%', opacity: 1, ease: Linear.easeNone }), "t0+=6")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(4) .verona-common-overlay"], 2, { opacity: 0 }), "t0+=6")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(5)"], 2, { y: '100%', opacity: 1, ease: Linear.easeNone }), "t0+=6")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(6)"], 1, { y: '200%', opacity: 1, ease: Linear.easeNone }), "t0+=6")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(3)"], 3, { opacity: 0 }), "t0+=6")
 
-        .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(4)"], 2, { y: '-110%', ease: Linear.easeNone }), "t0+=9")
-            .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(5)"], 2, { y: '0%', ease: Linear.easeNone }), "t0+=9")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(5)"], 2, { y: '0%', opacity: 1, ease: Linear.easeNone }), "t0+=9")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(5) .verona-common-overlay"], 2, { opacity: 0 }), "t0+=9")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(6)"], 2, { y: '100%', opacity: 1, ease: Linear.easeNone }), "t0+=9")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(4)"], 3, { opacity: 0 }), "t0+=9")
+    //     .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(4)"], 2, { y: '-110%', ease: Linear.easeNone }), "t0+=9")
+    //         .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(5)"], 2, { y: '0%', ease: Linear.easeNone }), "t0+=9")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(5)"], 2, { y: '0%', opacity: 1, ease: Linear.easeNone }), "t0+=9")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(5) .verona-common-overlay"], 2, { opacity: 0 }), "t0+=9")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(6)"], 2, { y: '100%', opacity: 1, ease: Linear.easeNone }), "t0+=9")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(4)"], 3, { opacity: 0 }), "t0+=9")
 
-        .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(5)"], 2, { y: '-110%', ease: Linear.easeNone }), "t0+=12")
-            .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(6)"], 2, { y: '0%', ease: Linear.easeNone }), "t0+=12")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(6)"], 2, { y: '0%', opacity: 1, ease: Linear.easeNone }), "t0+=12")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(6) .verona-common-overlay"], 2, { opacity: 0 }), "t0+=12")
-            .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(5)"], 3, { opacity: 0 }), "t0+=12")
+    //     .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(5)"], 2, { y: '-110%', ease: Linear.easeNone }), "t0+=12")
+    //         .add(TweenMax.to(["#veronaSec2Texts .verona-sec2-text:nth-child(6)"], 2, { y: '0%', ease: Linear.easeNone }), "t0+=12")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(6)"], 2, { y: '0%', opacity: 1, ease: Linear.easeNone }), "t0+=12")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(6) .verona-common-overlay"], 2, { opacity: 0 }), "t0+=12")
+    //         .add(TweenMax.to(["#veronaSec2Imgs .verona-sec2-img:nth-child(5)"], 3, { opacity: 0 }), "t0+=12")
 
-        var sceneSec2M = new ScrollMagic.Scene({ triggerElement: "#triggerSec2", duration: "300%", triggerHook: 0 })
-            .setPin('.verona-sec2-container')
-            .setTween(timeLineSec2M)
-            // .addIndicators({ name: "sec2" })
-            .addTo(controller);
-    }
+    //     var sceneSec2M = new ScrollMagic.Scene({ triggerElement: "#triggerSec2", duration: "300%", triggerHook: 0 })
+    //         .setPin('.verona-sec2-container')
+    //         .setTween(timeLineSec2M)
+    //         // .addIndicators({ name: "sec2" })
+    //         .addTo(controller);
+    // }
     if (isMS) {
         timeLineSec2 = null;
         sceneSec2.destroy(true);

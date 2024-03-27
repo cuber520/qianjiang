@@ -2079,6 +2079,7 @@ header .language .icon1 .bi {
 .footer {
   width: 100%;
   padding: 4.25rem 0 2.9rem;
+  padding: 8.25rem 0 2.9rem;
   color: #fff;
   background: url("/static/images/foot-1.jpg") no-repeat center center;
   background-size: cover;
