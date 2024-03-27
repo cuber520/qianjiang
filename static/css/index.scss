@@ -17,6 +17,18 @@
     width: 100%;
     // height: 43.5em; // position: relative;
     overflow: hidden;
+    .swiper-slide {
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: .35;
+        }
+    }
     .imgs {
         position: absolute;
         top: 0;
@@ -173,6 +185,36 @@
     }
     .swiper-slide3 {
         background: transparent;
+    }
+    .swiper-slide {
+        text-align: center;
+        // font-size: 18px;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        overflow: hidden;
+    }
+    .slide-inner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-size: cover;
+        background-position: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        color: #fff;
     }
 }
 
@@ -464,6 +506,8 @@
         width: 100%;
         height: 100%;
         padding: 2.4em 3.2em;
+        font-size: .9em;
+        line-height: 2;
         z-index: 5;
         transition: .3s;
     }
@@ -653,8 +697,18 @@
     }
 }
 
-.foot-topbox-tool .btn:hover {
+.foot-topbox-tool .btn {
     background-image: linear-gradient(0deg, #0170b2 0%, #07bfb9 100%), linear-gradient( #83b3fa, #83b3fa);
     background-blend-mode: normal, normal;
-    transition: .3s;
+    // border-radius: 0;
+    // transition: .3s;
+    border-bottom: 0;
+    border-top: 0;
+}
+
+
+/* 隐藏浏览器默认的视频控制条 */
+
+video::-webkit-media-controls {
+    display: none !important;
 }
