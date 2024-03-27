@@ -1,0 +1,9 @@
+.mySwiper {
+  width: 100%;
+  height: 100VH;
+}
+
+.mySwiper .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
